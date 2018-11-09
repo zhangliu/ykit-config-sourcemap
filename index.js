@@ -20,8 +20,8 @@ module.exports = {
                 })
     
                 console.log('开始生成 sentry 版本号...')
-                version = await sentry.createVersion()
-                console.log(`生成 sentry 版本号：${version}`)
+                version = hooks.version || (await sentry.createVersion())
+                console.log(`使用 sentry 版本号：${version}`)
     
                 console.log('开始上传压缩文件到 sentry 系统...')
                 await sentry.uploadFiles(version, `${process.cwd()}/prd`)
