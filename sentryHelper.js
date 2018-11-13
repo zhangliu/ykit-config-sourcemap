@@ -21,6 +21,16 @@ class SentryHelper{
         })
     }
 
+    async deleteFiles(version) {
+        return new Promise((resolve, reject) => {
+            const cmd = `${this.cmdPre} files ${version} delete --all`
+            exec(cmd, (error, stdout) => {
+                if (error) reject(error)
+                resolve(stdout)
+            })
+        })
+    }
+
     async deleteVersion(version) {
         if (!version) return null
         return new Promise((resolve, reject) => {
@@ -35,7 +45,7 @@ class SentryHelper{
     async uploadFiles(version, filePath) {
         return new Promise((resolve, reject) => {
             console.log(`开始上传 ${filePath} 下的文件...`)
-            const cmd = `${this.cmdPre} files ${version} upload-sourcemaps --url-prefix '${this.urlPrefix}' ${filePath}`
+            const cmd = `${this.cmdPre} files ${version} upload-sourcemaps --validate --url-prefix '${this.urlPrefix}' ${filePath}`
             exec(cmd, (error, stdout) => {
                 if (error) reject(error)
                 resolve(stdout)
