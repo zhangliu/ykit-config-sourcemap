@@ -1,6 +1,6 @@
 {
   "name": "@zhangliu/ykit-config-sourcemap",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "ykit 插件模板",
   "main": "index.js",
   "scripts": {
