@@ -1,4 +1,5 @@
 const exec = require('child_process').exec
+const path = require('path')
 
 const EIGHT_HOURS = 8 * 3600 * 1000
 const versionGen = () => new Date(Date.now() + EIGHT_HOURS).toISOString().replace(/[^\d]/g, '')
@@ -8,7 +9,8 @@ class SentryHelper{
         const {org, project, token, sentryService} = config
         // this.versionGen = versionGen
         this.urlPrefix = config.urlPrefix || '~'
-        this.cmdPre = `./node_modules/.bin/sentry-cli --url ${sentryService} --auth-token ${token} releases -o ${org} -p ${project}`
+        const cli = `${path.dirname(__filename)}/node_modules/.bin/sentry-cli`
+        this.cmdPre = `${cli} --url ${sentryService} --auth-token ${token} releases -o ${org} -p ${project}`
     }
 
     async createVersion() {

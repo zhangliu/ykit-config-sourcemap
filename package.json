@@ -17,5 +17,7 @@
   "homepage": "https://github.com/YMFE/ykit-config-seed",
   "author": "heiwu805@hotmail.com",
   "license": "MIT",
-  "dependencies": {}
+  "dependencies": {
+    "@sentry/cli": "^1.36.4"
+  }
 }

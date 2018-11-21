@@ -30,7 +30,7 @@ module.exports = {
                 await sentry.uploadFiles(version, `${process.cwd()}/prd`)
                 console.log('开始上传 sourcemap 文件到 sentry 系统...')
                 await sentry.uploadFiles(version, `${process.cwd()}/prd_sourcemap`)
-                console.log('上传完毕！')
+                console.log(`上传至版本 ${version} 成功！`)
             } catch (e) {
                 console.error('上传文件至 sentry 失败！', e)
                 await sentry.deleteVersion(version)
