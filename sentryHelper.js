@@ -9,7 +9,7 @@ class SentryHelper{
         const {org, project, token, sentryService} = config
         // this.versionGen = versionGen
         this.urlPrefix = config.urlPrefix || '~'
-        const cli = `${path.dirname(__filename)}/node_modules/.bin/sentry-cli`
+        const cli = `${process.cwd()}/node_modules/.bin/sentry-cli`
         this.cmdPre = `${cli} --url ${sentryService} --auth-token ${token} releases -o ${org} -p ${project}`
     }
 
