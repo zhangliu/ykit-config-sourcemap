@@ -13,9 +13,9 @@ class SentryHelper{
         this.cmdPre = `${cli} --url ${sentryService} --auth-token ${token} releases -o ${org} -p ${project}`
     }
 
-    async createVersion() {
+    async createVersion(version) {
         return new Promise((resolve, reject) => {
-            const cmd = `${this.cmdPre} new ${versionGen()}`
+            const cmd = `${this.cmdPre} new ${version || versionGen()}`
             exec(cmd, (error, stdout) => {
                 if (error) reject(error)
                 resolve(stdout.replace(/[^\d]*(\d+)[^\d]*/, '$1'))

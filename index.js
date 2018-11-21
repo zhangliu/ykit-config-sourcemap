@@ -20,7 +20,7 @@ module.exports = {
                 // })
     
                 console.log('开始生成 sentry 版本号...')
-                version = hooks.version || (await sentry.createVersion())
+                version = await sentry.createVersion(hooks.version)
                 console.log(`使用 sentry 版本号：${version}`)
 
                 console.log('清空该版本下的所有旧文件...')
