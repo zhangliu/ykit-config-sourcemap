@@ -15,10 +15,10 @@ class SentryHelper{
 
     async createVersion(version) {
         return new Promise((resolve, reject) => {
-            const cmd = `${this.cmdPre} new ${version || versionGen()}`
+            const cmd = `${this.cmdPre} new ${version}`
             exec(cmd, (error, stdout) => {
                 if (error) reject(error)
-                resolve(stdout.replace(/[^\d]*(\d+)[^\d]*/, '$1'))
+                resolve(version)
             })
         })
     }

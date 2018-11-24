@@ -14,7 +14,7 @@ module.exports = {
             let version
             const sentry = new SentryHelper(options.hooks)
             try {
-                const assets = stats.compilation.assets
+                // const assets = stats.compilation.assets
                 // Object.keys(assets).forEach(key => {
                 //     fs.appendFileSync(assets[key].existsAt, `\n//# sourceMappingURL=${key}.map`)
                 // })
