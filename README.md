@@ -32,7 +32,7 @@ plugins: [
                 token: 'xxxxxxx', // 授权token
                 sentryService: 'http://xxxx.xxxxx.xxx', // 你的sentry服务地址
                 version: 'version1', // 上传sourcemap到你项目的哪个版本中，如果没有该版本，就会自动创建
-                urlPrefix: 'xxxx', // 上传到sentry服务器上后对应的地址
+                urlPrefix: 'xxxx', // 上传到sentry服务器上后对应的地址, 域名部分可以用 ~ 代替
             }
         }
     }
