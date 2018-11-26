@@ -18,6 +18,7 @@
   "author": "heiwu805@hotmail.com",
   "license": "MIT",
   "dependencies": {
-    "@sentry/cli": "^1.36.4"
+    "@sentry/cli": "^1.36.4",
+    "co": "^4.6.0"
   }
 }
