@@ -64,4 +64,4 @@ config : function () {
 
 -x: 取消ykit内置的压缩机制（ykit内置压缩有问题）
 
-ok, 这个时候当你使用webpack打包的时候，就会自动上传sourcemap相关的文件了！
+**ok, 做完上面的工作的的时候，在portal上打包，就会自动上传sourcemap相关的文件了！**
