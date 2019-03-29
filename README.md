@@ -52,11 +52,16 @@ config : function () {
 ```
 
 4、在 portal 打包项目的时候使用自定义编译参数：ykit build -m -s -x
-[详细请见](http://wiki.corp.qunar.com/confluence/download/attachments/235824521/image2019-3-5_20-22-3.png?version=1&modificationDate=1551788524000&api=v2)
+
+![](http://wiki.corp.qunar.com/confluence/download/attachments/235824521/image2019-3-5_20-22-3.png?version=1&modificationDate=1551788524000&api=v2)
+
 为啥要使用自定义的编译参数呢？因为 ykit 也内置了代码的压缩功能，但是有问题（无法对应到sourcemap文件）
 所以 ykit 在编译代码的时候，需要通过参数 -x 取消内置的压缩功能：
+
 -m: 将代码进行最小化压缩
+
 -s: 生成sourcemap文件
+
 -x: 取消ykit内置的压缩机制（ykit内置压缩有问题）
 
 ok, 这个时候当你使用webpack打包的时候，就会自动上传sourcemap相关的文件了！
